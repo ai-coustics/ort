@@ -271,6 +271,8 @@ pub(crate) fn apply_execution_providers(options: *mut sys::OrtSessionOptions, ex
 			"ROCmExecutionProvider" => {
 				#[cfg(target_arch = "aarch64")]
 				let gpu_mem_limit = u64::MAX;
+				#[cfg(any(target_arch = "arm"))]
+				let gpu_mem_limit = u32::MAX;
 				#[cfg(any(target_arch = "x86_64", target_arch = "x86"))]
 				let gpu_mem_limit = usize::MAX;
 

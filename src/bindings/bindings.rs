@@ -18,3 +18,9 @@ include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/bindings/windows/x86/bindings
 
 #[cfg(all(target_os = "windows", target_arch = "aarch64"))]
 include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/bindings/windows/aarch64/bindings.rs"));
+
+#[cfg(all(target_os = "android", target_arch = "arm"))]
+include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/bindings/android/arm/bindings.rs"));
+
+#[cfg(all(target_os = "android", target_arch = "aarch64"))]
+include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/bindings/android/aarch64/bindings.rs"));
